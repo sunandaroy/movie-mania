@@ -5,6 +5,8 @@ MovieMania::Application.routes.draw do
     post "/users/:id/purchase" => "users#purchase"
 
   # Sample resource route with sub-resources:
+    resources :movies
+
     resources :seasons do
       resources :episodes, only: [:index]
     end
