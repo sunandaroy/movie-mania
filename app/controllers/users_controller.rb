@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  before_filter :validate_params_for_purchase, only: :purchase
+
+  def validate_params_for_purchase
+    if !params[:content_id].present? || !params[:content_type].present?
+      render json: {status: "error", code: 400, message: "insufficient data"}
+    elsif !(["movie", "season"].include? params[:content_type])
+      render json: {status: "error", code: 400, message: "Incorrect information"}
+    end
+  end
 
   def purchase
     #expects to have two parameters content_type and content_id
