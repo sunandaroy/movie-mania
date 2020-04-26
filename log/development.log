@@ -1,0 +1,1996 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (4.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateMovies (20200425082630)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "plot" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425082630')[0m
+  [1m[35m (3.4ms)[0m  commit transaction
+Migrating to CreateEpisodes (20200425082817)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "episodes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "plot" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425082817')[0m
+  [1m[35m (5.8ms)[0m  commit transaction
+Migrating to CreateSeasons (20200425082944)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "seasons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "plot" varchar(255), "number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425082944')[0m
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/movies" for 127.0.0.1 at 2020-04-25 15:01:36 +0530
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 500 Internal Server Error in 10.7ms
+
+ActionView::MissingTemplate (Missing template movies/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__3979740305675611715__process_action__3633448054959159974__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__4420706015646809243__call__2003054549803103155__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2020-04-25 15:06:16 +0530
+Processing by MoviesController#index as JSON
+  [1m[35mMovie Load (0.0ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 200 OK in 3.2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2020-04-25 15:09:01 +0530
+
+SyntaxError (/home/sunanda/my-project/movie-mania/app/controllers/movies_controller.rb:4: syntax error, unexpected &
+...   @movies = @movies.sort_by {&:created_at}
+...                              ^):
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.22.1) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.22.1) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.22.1) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.22.1) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__4420706015646809243__call__2003054549803103155__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.1ms)
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2020-04-25 15:09:36 +0530
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 200 OK in 2.5ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/movies.json" for 127.0.0.1 at 2020-04-25 15:11:07 +0530
+Connecting to database specified by database.yml
+Processing by MoviesController#index as JSON
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 200 OK in 8.2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 15:27:24 +0530
+Connecting to database specified by database.yml
+Processing by SeasonsController#index as JSON
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 500 Internal Server Error in 9.0ms
+
+ActiveRecord::ConfigurationError (Association named 'episodes' was not found; perhaps you misspelled it?):
+  app/controllers/seasons_controller.rb:4:in `index'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 15:27:38 +0530
+Processing by SeasonsController#index as JSON
+  [1m[35mMovie Load (0.0ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 500 Internal Server Error in 3.2ms
+
+ActiveRecord::ConfigurationError (Association named 'episode' was not found; perhaps you misspelled it?):
+  app/controllers/seasons_controller.rb:4:in `index'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.3ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (2.6ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (4.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateMovies (20200425082630)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "plot" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425082630')[0m
+  [1m[35m (4.3ms)[0m  commit transaction
+Migrating to CreateEpisodes (20200425082817)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "episodes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "plot" varchar(255), "season_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425082817')[0m
+  [1m[35m (3.4ms)[0m  commit transaction
+Migrating to CreateSeasons (20200425082944)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "seasons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "plot" varchar(255), "number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425082944')[0m
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (8.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateMovies (20200425082630)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "plot" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425082630')[0m
+  [1m[35m (3.2ms)[0m  commit transaction
+Migrating to CreateSeasons (20200425110338)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "seasons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "plot" varchar(255), "number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425110338')[0m
+  [1m[35m (3.2ms)[0m  commit transaction
+Migrating to CreateEpisodes (20200425110503)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "episodes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "plot" varchar(255), "season_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_episodes_on_season_id" ON "episodes" ("season_id")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20200425110503')
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 17:43:02 +0530
+Connecting to database specified by database.yml
+Processing by SeasonsController#index as JSON
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+Completed 200 OK in 7.3ms (Views: 0.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 17:43:26 +0530
+Processing by SeasonsController#index as JSON
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+Completed 200 OK in 1.6ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 17:44:08 +0530
+Processing by SeasonsController#index as JSON
+  [1m[36mSeason Load (0.1ms)[0m  [1mSELECT "seasons".* FROM "seasons" [0m
+Completed 500 Internal Server Error in 4.1ms
+
+ActiveRecord::ConfigurationError (Association named 'episode' was not found; perhaps you misspelled it?):
+  app/controllers/seasons_controller.rb:4:in `index'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.5ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 17:45:12 +0530
+Processing by SeasonsController#index as JSON
+  [1m[35mSeason Load (0.0ms)[0m  SELECT "seasons".* FROM "seasons" 
+Completed 500 Internal Server Error in 3.1ms
+
+ActiveRecord::ConfigurationError (Association named 'episode' was not found; perhaps you misspelled it?):
+  app/controllers/seasons_controller.rb:4:in `index'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (2.9ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 17:45:16 +0530
+Processing by SeasonsController#index as JSON
+  [1m[36mSeason Load (0.1ms)[0m  [1mSELECT "seasons".* FROM "seasons" [0m
+Completed 500 Internal Server Error in 0.4ms
+
+ActiveRecord::ConfigurationError (Association named 'episode' was not found; perhaps you misspelled it?):
+  app/controllers/seasons_controller.rb:4:in `index'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.0ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 17:45:33 +0530
+Processing by SeasonsController#index as JSON
+  [1m[35mSeason Load (0.0ms)[0m  SELECT "seasons".* FROM "seasons" 
+Completed 500 Internal Server Error in 9.4ms
+
+TypeError (Cannot visit Integer):
+  app/controllers/seasons_controller.rb:6:in `index'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (2.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 18:01:58 +0530
+Processing by SeasonsController#index as JSON
+  [1m[36mSeason Load (0.1ms)[0m  [1mSELECT "seasons".* FROM "seasons" [0m
+Completed 500 Internal Server Error in 0.6ms
+
+TypeError (Cannot visit Integer):
+  app/controllers/seasons_controller.rb:6:in `index'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.0ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 18:02:01 +0530
+Processing by SeasonsController#index as JSON
+  [1m[35mSeason Load (0.3ms)[0m  SELECT "seasons".* FROM "seasons" 
+Completed 500 Internal Server Error in 1.4ms
+
+TypeError (Cannot visit Integer):
+  app/controllers/seasons_controller.rb:6:in `index'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (2.8ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 18:02:01 +0530
+Processing by SeasonsController#index as JSON
+  [1m[36mSeason Load (0.3ms)[0m  [1mSELECT "seasons".* FROM "seasons" [0m
+Completed 500 Internal Server Error in 2.5ms
+
+TypeError (Cannot visit Integer):
+  app/controllers/seasons_controller.rb:6:in `index'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.6.0/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.4ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 18:03:56 +0530
+Processing by SeasonsController#index as JSON
+  [1m[35mSeason Load (0.1ms)[0m  SELECT "seasons".* FROM "seasons" 
+  [1m[36mEpisode Load (0.1ms)[0m  [1mSELECT "episodes".* FROM "episodes" WHERE "episodes"."season_id" IN (1)[0m
+Completed 200 OK in 8.7ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 18:16:26 +0530
+Connecting to database specified by database.yml
+Processing by SeasonsController#index as JSON
+  [1m[36mSeason Load (0.1ms)[0m  [1mSELECT "seasons".* FROM "seasons" [0m
+  [1m[35mEpisode Load (0.1ms)[0m  SELECT "episodes".* FROM "episodes" WHERE "episodes"."season_id" IN (1)
+DEPRECATION WARNING: You're trying to create an attribute `episodes'. Writing arbitrary attributes on a model is deprecated. Please just use `attr_writer` etc. (called from block in index at /home/sunanda/my-project/movie-mania/app/controllers/seasons_controller.rb:7)
+Completed 200 OK in 21.5ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/seasons.json" for 127.0.0.1 at 2020-04-25 18:17:46 +0530
+Processing by SeasonsController#index as JSON
+  [1m[36mSeason Load (0.1ms)[0m  [1mSELECT "seasons".* FROM "seasons" [0m
+  [1m[35mEpisode Load (0.0ms)[0m  SELECT "episodes".* FROM "episodes" WHERE "episodes"."season_id" IN (1)
+DEPRECATION WARNING: You're trying to create an attribute `episodes'. Writing arbitrary attributes on a model is deprecated. Please just use `attr_writer` etc. (called from block in index at /home/sunanda/my-project/movie-mania/app/controllers/seasons_controller.rb:8)
+Completed 200 OK in 7.9ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/products" for 127.0.0.1 at 2020-04-25 18:32:12 +0530
+Connecting to database specified by database.yml
+Processing by MoviesController#resource_list as HTML
+Completed 500 Internal Server Error in 0.5ms
+
+NameError (uninitialized constant MoviesController::Movide):
+  app/controllers/movies_controller.rb:11:in `resource_list'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2020-04-25 18:32:44 +0530
+Processing by MoviesController#resource_list as HTML
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mSeason Load (0.0ms)[0m  SELECT "seasons".* FROM "seasons" 
+Completed 406 Not Acceptable in 13.4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/products.json" for 127.0.0.1 at 2020-04-25 18:33:01 +0530
+Processing by MoviesController#resource_list as JSON
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mSeason Load (0.0ms)[0m  SELECT "seasons".* FROM "seasons" 
+Completed 200 OK in 1.3ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/products.json" for 127.0.0.1 at 2020-04-25 18:34:59 +0530
+Connecting to database specified by database.yml
+Processing by MoviesController#resource_list as JSON
+  [1m[36mMovie Load (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mSeason Load (0.0ms)[0m  SELECT "seasons".* FROM "seasons" 
+Completed 200 OK in 17.9ms (Views: 0.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products.json" for 127.0.0.1 at 2020-04-25 18:34:59 +0530
+Processing by MoviesController#resource_list as JSON
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  [1m[35mSeason Load (0.0ms)[0m  SELECT "seasons".* FROM "seasons" 
+Completed 200 OK in 0.9ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20200425082630)
+Migrating to CreateSeasons (20200425110338)
+Migrating to CreateEpisodes (20200425110503)
+Migrating to CreateLibraries (20200425185220)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "libraries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425185220')[0m
+  [1m[35m (4.5ms)[0m  commit transaction
+Migrating to CreateMoviePurchaseHistory (20200425185656)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "movie_purchase_histories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "movie_id" integer, "library_id" integer, "purchase_time" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425185656')[0m
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (3.7ms)[0m  DROP TABLE "movie_purchase_histories"
+  [1m[36m (2.9ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20200425185656'[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20200425082630)
+Migrating to CreateSeasons (20200425110338)
+Migrating to CreateEpisodes (20200425110503)
+Migrating to CreateLibraries (20200425185220)
+Migrating to CreateMoviePurchaseMappings (20200425191333)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "movie_purchase_mappings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "movie_id" integer, "library_id" integer, "purchase_time" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425191333')[0m
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20200425082630)
+Migrating to CreateSeasons (20200425110338)
+Migrating to CreateEpisodes (20200425110503)
+Migrating to CreateLibraries (20200425185220)
+Migrating to CreateMoviePurchaseMappings (20200425191333)
+Migrating to CreateSeasonPurchaseMappings (20200425193513)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "season_purchase_mappings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "season_id" integer, "library_id" integer, "purchase_time" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425193513')[0m
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (3.5ms)[0m  DROP TABLE "libraries"
+  [1m[36m (3.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20200425185220'[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "libraries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (4.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20200425185220')
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20200425082630)
+Migrating to CreateSeasons (20200425110338)
+Migrating to CreateEpisodes (20200425110503)
+Migrating to CreateLibraries (20200425185220)
+Migrating to CreateMoviePurchaseMappings (20200425191333)
+Migrating to CreateSeasonPurchaseMappings (20200425193513)
+Migrating to CreateUsers (20200425195701)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email_id" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20200425195701')[0m
+  [1m[35m (4.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 01:52:55 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 6.1ms
+
+ActionView::MissingTemplate (Missing template users/all_contents, application/all_contents with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__4007831120650765472__process_action__71374398217043700__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__1205725354253274284__call__3052955988431690407__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.7ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 01:55:39 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 123696.6ms
+
+ActionView::MissingTemplate (Missing template users/all_contents, application/all_contents with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__2115388994000173499__process_action__95185469810740531__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__42705385932515751__call__2370731272809321673__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 01:57:48 +0530
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 65260.3ms
+
+ActionView::MissingTemplate (Missing template users/all_contents, application/all_contents with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__2115388994000173499__process_action__95185469810740531__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__42705385932515751__call__2370731272809321673__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.2ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 01:59:01 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1[0m
+  [1m[35mSeason Load (0.1ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1
+Completed 500 Internal Server Error in 62029.7ms
+
+ActionView::MissingTemplate (Missing template users/all_contents, application/all_contents with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__2247468823727750216__process_action__529018480874999754__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__3698301605792939676__call__621898208448061288__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 02:00:11 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 22.6ms
+
+NoMethodError (undefined method `movies' for #<User:0x000000025d9740>):
+  app/controllers/users_controller.rb:6:in `all_contents'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.3ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 02:02:11 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1[0m
+  [1m[35mSeason Load (0.2ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1
+Completed 500 Internal Server Error in 208404.7ms
+
+ActionView::MissingTemplate (Missing template users/all_contents, application/all_contents with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__1658339144398995011__process_action__3491690764808542961__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__3726590474820946482__call__165933298833816383__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 02:05:47 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 138788.9ms
+
+ActionView::MissingTemplate (Missing template users/all_contents, application/all_contents with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__3621119427288466478__process_action__4052353887585333941__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__1494965102122932603__call__1707611402674768181__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 02:08:12 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1[0m
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND "movies"."id" = 1
+  [1m[36mLibrary Load (0.1ms)[0m  [1mSELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-24 20:44:01.116662')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time <= '2020-04-24 20:44:16.033719')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 ORDER BY "movies"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 ORDER BY "movies"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time <= '2020-04-24 20:45:54.306485')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-24 20:46:04.556904')[0m
+  [1m[35mMoviePurchaseMapping Load (0.4ms)[0m  SELECT "movie_purchase_mappings".* FROM "movie_purchase_mappings" ORDER BY "movie_purchase_mappings"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "movie_purchase_mappings".* FROM "movie_purchase_mappings" ORDER BY "movie_purchase_mappings"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mUPDATE "movie_purchase_mappings" SET "purchase_time" = '2020-04-25 20:47:44.206416', "updated_at" = '2020-04-25 20:47:54.941051' WHERE "movie_purchase_mappings"."id" = 2[0m
+  [1m[35m (3.9ms)[0m  commit transaction
+  [1m[36mLibrary Load (0.1ms)[0m  [1mSELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-24 20:48:01.807516')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time <= '2020-04-24 20:48:21.593582')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "libraries".* FROM "libraries" WHERE "libraries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-24 20:48:26.368278')
+Completed 500 Internal Server Error in 856219.2ms
+
+ActionView::MissingTemplate (Missing template users/all_contents, application/all_contents with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__4231255967755660752__process_action__1342382113720436488__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__652218229568188223__call__2635925031124818141__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 02:22:39 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.1ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-23 20:52:54.236488')[0m
+  [1m[35mSeason Load (0.1ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-23 20:52:54.240588')
+Completed 500 Internal Server Error in 14906.6ms
+
+NoMethodError (undefined method `py' for #<Binding:0x00000003306aa8>):
+  app/controllers/users_controller.rb:9:in `all_contents'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.7ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 02:23:17 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-23 20:53:17.816153')[0m
+  [1m[35mSeason Load (0.1ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-23 20:53:17.820486')
+  [1m[36mSeasonPurchaseMapping Load (0.1ms)[0m  [1mSELECT "season_purchase_mappings".* FROM "season_purchase_mappings" [0m
+  [1m[35mSeasonPurchaseMapping Load (0.3ms)[0m  SELECT "season_purchase_mappings".* FROM "season_purchase_mappings" ORDER BY "season_purchase_mappings"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "season_purchase_mappings".* FROM "season_purchase_mappings" ORDER BY "season_purchase_mappings"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mUPDATE "season_purchase_mappings" SET "purchase_time" = '2020-04-25 20:54:52.000000', "updated_at" = '2020-04-25 20:55:18.063369' WHERE "season_purchase_mappings"."id" = 1[0m
+  [1m[35m (68.8ms)[0m  commit transaction
+Completed 500 Internal Server Error in 130638.9ms
+
+ActionView::MissingTemplate (Missing template users/all_contents, application/all_contents with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__4443396664017269866__process_action__770116494060753248__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__4016814180926052669__call__3393739937181525083__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 02:25:34 +0530
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.1ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-23 20:55:34.603763')[0m
+  [1m[35mSeason Load (0.1ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-23 20:55:34.604221')
+Completed 500 Internal Server Error in 198599.9ms
+
+ActionView::MissingTemplate (Missing template users/all_contents, application/all_contents with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/sunanda/my-project/movie-mania/app/views"
+):
+  actionpack (3.2.22.1) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.22.1) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.22.1) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.22.1) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.22.1) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.22.1) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (3.2.22.1) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.22.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:414:in `_run__4443396664017269866__process_action__770116494060753248__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.22.1) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.22.1) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.22.1) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.22.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.22.1) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.22.1) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.22.1) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.7) lib/rack/etag.rb:23:in `call'
+  rack (1.4.7) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.7) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.22.1) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.22.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `_run__4016814180926052669__call__3393739937181525083__callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.1) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.1) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.1) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.1) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.1) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/share/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.2ms)
+
+
+Started GET "/users/1/contents.json" for 127.0.0.1 at 2020-04-26 02:29:00 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#all_contents as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-23 20:59:00.104728')[0m
+  [1m[35mSeason Load (0.1ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND (purchase_time >= '2020-04-23 20:59:00.108682')
+Completed 200 OK in 45.8ms (Views: 0.5ms | ActiveRecord: 2.9ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 12:05:37 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"param1"=>"value1", "param2"=>"value2", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.1ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 95320.2ms
+
+NameError (undefined local variable or method `content_id' for #<UsersController:0x000000022cdd80>):
+  app/controllers/users_controller.rb:29:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 12:07:56 +0530
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"value1", "content_id"=>"value2", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.1ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 34774.8ms
+
+NameError (undefined local variable or method `content_id' for #<UsersController:0x000000038c9eb8>):
+  app/controllers/users_controller.rb:29:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.4ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 12:29:07 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"movie", "content_id"=>"1", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = '1' and purchase_time >= '2020-04-24 06:59:07.247795')[0m
+SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = '1' and purchase_time >= '2020-04-24 06:59:07.247795')
+Completed 500 Internal Server Error in 41.2ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = '1' and purchase_time >= '2020-04-24 06:59:07.247795')):
+  app/controllers/users_controller.rb:28:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.8ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:02:28 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"movie", "content_id"=>"1", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = '1' and purchase_time >= '2020-04-24 07:33:01.533734')[0m
+SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = '1' and purchase_time >= '2020-04-24 07:33:01.533734')
+Completed 500 Internal Server Error in 32659.5ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = '1' and purchase_time >= '2020-04-24 07:33:01.533734')):
+  app/controllers/users_controller.rb:29:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:04:16 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"movie", "content_id"=>"1", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.1ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = '1' and purchase_time >= '2020-04-24 07:35:54.906036')[0m
+SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = '1' and purchase_time >= '2020-04-24 07:35:54.906036')
+Completed 500 Internal Server Error in 97760.4ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = '1' and purchase_time >= '2020-04-24 07:35:54.906036')):
+  app/controllers/users_controller.rb:30:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:06:01 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"movie", "content_id"=>"1", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:36:32.565468')[0m
+SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:36:32.565468')
+Completed 500 Internal Server Error in 31152.9ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:36:32.565468')):
+  app/controllers/users_controller.rb:30:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:07:07 +0530
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"movie", "content_id"=>"1", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLibrary Load (0.1ms)[0m  [1mSELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:37:59.809444')[0m
+SQLite3::SQLException: ambiguous column name: id: SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:37:59.809444')
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:38:12.994812')
+SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:38:12.994812')
+Completed 500 Internal Server Error in 65208.2ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:38:12.994812')):
+  app/controllers/users_controller.rb:30:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:08:39 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"movie", "content_id"=>"1", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:40:18.976048')[0m
+SQLite3::SQLException: ambiguous column name: id: SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:40:18.976048')
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:40:22.587223') ORDER BY "movies"."id" DESC LIMIT 1
+SQLite3::SQLException: ambiguous column name: id: SELECT  "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:40:22.587223') ORDER BY "movies"."id" DESC LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1)
+SQLite3::SQLException: ambiguous column name: id: SELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1)
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:44:07.546693')
+SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:44:07.546693')
+Completed 500 Internal Server Error in 328058.5ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: ambiguous column name: id: SELECT COUNT(*) FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND (id = 1 and purchase_time >= '2020-04-24 07:44:07.546693')):
+  app/controllers/users_controller.rb:30:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.6ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:14:17 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"movie", "content_id"=>"1", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 5544.5ms (Views: 0.1ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:15:20 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"movie", "content_id"=>"1", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "movie_purchase_mappings" ON "movies"."id" = "movie_purchase_mappings"."movie_id" WHERE "movie_purchase_mappings"."library_id" = 1 AND "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19140.1ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:18:07 +0530
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"season", "content_id"=>"2", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLibrary Load (0.1ms)[0m  [1mSELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1[0m
+  [1m[35mSeason Load (0.1ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = ? LIMIT 1  [["id", 2]]
+Completed 404 Not Found in 7489.6ms
+
+ActiveRecord::RecordNotFound (Couldn't find Season with id=2 [WHERE "season_purchase_mappings"."library_id" = 1]):
+  app/controllers/users_controller.rb:9:in `find_item'
+  app/controllers/users_controller.rb:28:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:18:50 +0530
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"season", "content_id"=>"2", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.1ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mSeason Load (0.0ms)[0m  [1mSELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSeason Load (0.2ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."content_id" = 2
+SQLite3::SQLException: no such column: seasons.content_id: SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."content_id" = 2
+  [1m[36mSeason Load (0.1ms)[0m  [1mSELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1[0m
+  [1m[35mSeason Load (0.1ms)[0m  SELECT "seasons".* FROM "seasons" 
+  [1m[36mSeason Load (0.3ms)[0m  [1mSELECT "seasons".* FROM "seasons" WHERE "seasons"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSeason Load (0.1ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 404 Not Found in 277026.8ms
+
+ActiveRecord::RecordNotFound (Couldn't find Season with id=2 [WHERE "season_purchase_mappings"."library_id" = 1]):
+  app/controllers/users_controller.rb:9:in `find_item'
+  app/controllers/users_controller.rb:28:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:23:36 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"season", "content_id"=>"2", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36mSeason Load (0.1ms)[0m  [1mSELECT "seasons".* FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 2[0m
+Completed 500 Internal Server Error in 18228.0ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/users_controller.rb:35:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.7ms)
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:26:46 +0530
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"season", "content_id"=>"2", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLibrary Load (0.0ms)[0m  [1mSELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 2
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "season_purchase_mappings" ("created_at", "library_id", "purchase_time", "season_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 26 Apr 2020 07:57:19 UTC +00:00], ["library_id", 1], ["purchase_time", Sun, 26 Apr 2020 07:57:19 UTC +00:00], ["season_id", 2], ["updated_at", Sun, 26 Apr 2020 07:57:19 UTC +00:00]]
+  [1m[36m (67.8ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 32691.5ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/users_controller.rb:38:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.7ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:28:14 +0530
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"season", "content_id"=>"2", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLibrary Load (0.0ms)[0m  [1mSELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 2
+Completed 200 OK in 13897.6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:30:29 +0530
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"season", "content_id"=>"2", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.1ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 2[0m
+Completed 200 OK in 5152.3ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:31:05 +0530
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"season", "content_id"=>"3", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLibrary Load (0.1ms)[0m  [1mSELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 3
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "season_purchase_mappings" ("created_at", "library_id", "purchase_time", "season_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 26 Apr 2020 08:01:34 UTC +00:00], ["library_id", 1], ["purchase_time", Sun, 26 Apr 2020 08:01:34 UTC +00:00], ["season_id", 3], ["updated_at", Sun, 26 Apr 2020 08:01:34 UTC +00:00]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 28632.3ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/users_controller.rb:38:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:33:10 +0530
+Connecting to database specified by database.yml
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"season", "content_id"=>"4", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 4[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "season_purchase_mappings" ("created_at", "library_id", "purchase_time", "season_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 26 Apr 2020 08:03:16 UTC +00:00], ["library_id", 1], ["purchase_time", Sun, 26 Apr 2020 08:03:16 UTC +00:00], ["season_id", 4], ["updated_at", Sun, 26 Apr 2020 08:03:16 UTC +00:00]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 5620.2ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/users_controller.rb:38:in `purchase'
+
+
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/sunanda/.rvm/gems/ruby-2.2.2/gems/actionpack-3.2.22.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.6ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/users/1/purchase" for 127.0.0.1 at 2020-04-26 13:35:22 +0530
+Processing by UsersController#purchase as */*
+  Parameters: {"content_type"=>"season", "content_id"=>"5", "id"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLibrary Load (0.0ms)[0m  SELECT "libraries".* FROM "libraries" WHERE "libraries"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "seasons" INNER JOIN "season_purchase_mappings" ON "seasons"."id" = "season_purchase_mappings"."season_id" WHERE "season_purchase_mappings"."library_id" = 1 AND "seasons"."id" = 5[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "season_purchase_mappings" ("created_at", "library_id", "purchase_time", "season_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 26 Apr 2020 08:05:27 UTC +00:00], ["library_id", 1], ["purchase_time", Sun, 26 Apr 2020 08:05:27 UTC +00:00], ["season_id", 5], ["updated_at", Sun, 26 Apr 2020 08:05:27 UTC +00:00]]
+  [1m[35m (4.3ms)[0m  commit transaction
+Completed 200 OK in 5843.4ms (Views: 1.2ms | ActiveRecord: 5.5ms)
+Connecting to database specified by database.yml
