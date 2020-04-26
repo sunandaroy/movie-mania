@@ -34,13 +34,4 @@ class Library < ActiveRecord::Base
     user_contents
   end
 
-
-
-  # def get_all_alive_contents(library)
-  #   @user_movie_contents  = library.movies.where('purchase_time >= ?', 2.day.ago)
-  #   @user_season_contents = library.seasons.where('purchase_time >= ?', 2.day.ago)
-  #   @user_contents = @user_movie_contents + @user_season_contents
-  #   @user_contents
-  # end
-
 end
