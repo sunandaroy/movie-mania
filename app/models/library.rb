@@ -8,21 +8,23 @@ class Library < ActiveRecord::Base
 
 
 
-  def get_contents(content_type, content_id)
+  def get_contents(content_type, content_title)
     if content_type == "movie"
-      content = self.movies.where(id: content_id)
+      content = self.movies.where(title: content_title)
     else
-      content = self.seasons.where(id: content_id)
+      content = self.seasons.where(id: content_title)
     end
     content
   end
 
-  def register_content_purchase(content_type, content_id)
+  def register_content_purchase(content_type, content_title)
     if content_type == "movie"
       purchase_time = Time.now
+      content_id = Movie.where(title: content_title).last.id
       movie_purchase_mapping = MoviePurchaseMapping.create(movie_id: content_id, library_id: self.id, purchase_time: purchase_time)
     else
       purchase_time = Time.now
+      content_id = Season.where(title: content_title).last.id
       movie_purchase_mapping = SeasonPurchaseMapping.create(season_id: content_id, library_id: self.id, purchase_time: purchase_time)
     end
   end
