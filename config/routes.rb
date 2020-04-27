@@ -4,7 +4,6 @@ MovieMania::Application.routes.draw do
     get "/users/:id/contents" => "users#all_contents" #an user's all contents stored in a library
     post "/users/:id/purchase" => "users#purchase"  #an user performing purchase
 
-  # Sample resource route with sub-resources:
     resources :movies
 
     resources :seasons do
