@@ -1,4 +1,5 @@
 class Movie < ActiveRecord::Base
-  attr_accessible :plot, :title
   validates :title, :presence => true
+  attr_accessible :plot, :title
+
 end
