@@ -9,7 +9,7 @@ class SeasonsController < ApplicationController
       s[:episodes] = season_episodes
     }
     respond_to do |format|
-      format.json {render :json => @seasons}
+      format.json {render :json => @seasons, :except => :id}
     end
   end
 
