@@ -30,9 +30,21 @@ class Library < ActiveRecord::Base
   end
 
   def get_all_alive_contents
-    user_movie_contents  = self.movies.where('purchase_time >= ?', 2.day.ago)
-    user_season_contents = self.seasons.where('purchase_time >= ?', 2.day.ago)
-    user_contents = user_movie_contents + user_season_contents
+    current_time = Time.now
+    all_contents = []
+    self.movie_purchase_mappings.includes(:movie).each{|mapping|
+      next if mapping.purchase_time < 2.day.ago
+          movie_obj = mapping.movie
+          movie_obj.remaining_time = current_time - mapping.purchase_time
+          all_contents.push(movie_obj)
+          }
+    self.season_purchase_mappings.includes(:season).each{|mapping|
+      next if mapping.purchase_time < 2.day.ago
+      season_obj = mapping.season
+        season_obj.remaining_time = current_time - mapping.purchase_time
+      all_contents.push(season_obj)
+    }
+    user_contents = all_contents.sort_by{|a| a.remaining_time}
     user_contents
   end
 
