@@ -44,7 +44,7 @@ class Library < ActiveRecord::Base
         season_obj.remaining_time = current_time - mapping.purchase_time
       all_contents.push(season_obj)
     }
-    user_contents = all_contents.sort_by{|a| a.remaining_time}
+    user_contents = all_contents.sort_by!{|a| a.remaining_time}
     user_contents
   end
 
