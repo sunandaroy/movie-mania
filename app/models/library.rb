@@ -29,10 +29,22 @@ class Library < ActiveRecord::Base
     end
   end
 
+  def alive_movies_with_remaining_time(type)
+    current_time = Time.now
+    all_contents = []
+    mappings = type == "movie" ? self.movie_purchase_mappings.includes(:movie) : self.season_purchase_mappings.includes(:season)
+    mappings.each{|mapping|
+      next if mapping.purchase_time < 2.day.ago
+      resource_obj = type == "movie" ? mapping.movie : mapping.season
+      resource_obj.remaining_time = current_time - mapping.purchase_time
+      all_contents.push(resource_obj)
+    }
+    all_contents
+  end
+
   def get_all_alive_contents
-    user_movie_contents  = self.movies.where('purchase_time >= ?', 2.day.ago)
-    user_season_contents = self.seasons.where('purchase_time >= ?', 2.day.ago)
-    user_contents = user_movie_contents + user_season_contents
+    all_contents = alive_movies_with_remaining_time("movie") + alive_movies_with_remaining_time("season")
+    user_contents = all_contents.sort_by!{|a| a.remaining_time}
     user_contents
   end
 
